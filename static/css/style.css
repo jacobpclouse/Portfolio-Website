@@ -132,11 +132,17 @@ h3 { font-size: var(--fs-h3) }
 
 /* header, will turn this off */
 
-header {
+/* header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+} */
+.realHeader {
     display: flex;
     justify-content: space-between;
     padding: 1em;
 }
+
 
 .logo {
     max-width: 100px;

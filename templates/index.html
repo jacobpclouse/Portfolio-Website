@@ -1,8 +1,115 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>{% block title %} {{html_title}} {% endblock %}</h1>
-    <h1>Hello World!</h1>
-    <h2>Welcome to FlaskApp!</h2>
-    <h3>{{ utc_dt }}</h3>
+    <!-- Title of webpage set here -->
+    <!-- <h1>{% block title %} {{html_title}} {% endblock %}</h1> -->
+
+    <!-- Header and Hamburger button setup -->
+    <header class="realHeader">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='/img/logo2.png') }}" alt="JPC Logo">
+           
+        </div>
+        <button class="nav-toggle" aria-label="toggle navigation">
+            <span class="hamburger"></span>
+        </button>
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
+                <li class="nav__item"><a href="#services" class="nav__link">My Skills</a></li>
+                <li class="nav__item"><a href="#about" class="nav__link">About Me</a></li>
+                <li class="nav__item"><a href="#work" class="nav__link">My Work</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Introduction -->
+    <section class="intro" id="home">
+        <h1 class="section__title section__title--intro">
+            Hi, I'm <strong>Jacob Clouse</strong>
+        </h1>
+        <p class="section__subtitle section__subtitle--intro">Software Developer</p>
+        <img src="{{ url_for('static', filename='/img/profile.jpg') }} " alt="a picture of Jacob Clouse smiling" class="intro__img">
+        
+    </section>
+
+    <!-- My Skills-->
+    <section class="my-services" id="services">
+        <h2 class="section__title section__title--services">
+            My Skills
+        </h2>
+        <div class="services">
+
+            <div class="service">
+                <h3>#Development</h3>
+                <ul>
+                    <li>React JS & JSX</li>
+                    <li>Javascript & ES6</li>
+                    <li>Node JS & MongoDB</li>
+                </ul>
+            </div>
+
+            <div class="service">
+                <h3>#Design</h3>
+                <ul>
+                    <li>CSS Grid & CSS Flexbox</li>
+                    <li>Object Oriented Design</li>
+                    <li>Systems Design</li>
+                </ul>
+            </div>
+
+            <div class="service">
+                <h3>#Beyond</h3>
+                <ul>
+                    <li>Worked with APIs</li>
+                    <li>Workstation Support</li>
+                    <li>Security + Certification</li>
+                </ul>
+
+            </div>
+        </div>
+
+        <a href="#work" class="btn">My Work</a>
+    </section>
+
+    <!-- About Me -->
+    <section class="about-me" id="about">
+        <h2 class="section__title section__title--about">Who I am</h2>
+        <p class="section__subtitle section__subtitle--about"></p>
+
+        <div class="about-me__body">
+            <p>I am an experienced developer who is excited to work with new technologies. I love learning and challenge myself to learn something new every day</p>
+            <p>I graduated in 2017 with a B.S. in Information Systems from Sage College of Albany and am pursuing my M.S. in Computer Science at the University at Albany (SUNY).</p>
+        </div>
+
+        <img src="{{ url_for('static', filename='/img/logo.png') }}" alt="JPC logo in a computer" class="about-me__img">
+        <!-- {{ url_for('static', filename='/img/profile.jpg') }} -->
+    </section>
+
+    <!-- My Work -->
+    <section class="my-work" id="work">
+        <h2 class="section__title section__title--work">My Work</h2>
+        <p class="section__subtitle section__subtitle--work">A selection of my range of work</p>
+
+        <!-- MAKE THESE LINKS DYNAMICALLY CALL ITEMS FROM THE SQLITE DATABASE -->
+        <div class="portfolio">
+            <!-- Portfolio Item #1 -->
+            <a href="./portfolio-item.html" class="portfolio__item"> 
+                <img src="{{ url_for('static', filename='/img/meditationApp.PNG') }}" alt="Meditation App" class="portfolio__img">
+            </a>
+
+            <!-- Portfolio Item #2 -->
+            <a href="./portfolio-item2.html" class="portfolio__item">     
+                <img src="{{ url_for('static', filename='/img/bookListApp2.PNG') }}" alt="Booklist App" class="portfolio__img">
+            </a>
+
+            <!-- Portfolio Item #3 -->
+            <a href="./portfolio-item3.html" class="portfolio__item">
+                <!-- {{ url_for('static', filename='/img/logo.png') }} -->                   
+                <img src="{{ url_for('static', filename='/img/tribute.PNG') }}" alt="Tribute Site for Linus" class="portfolio__img">
+            </a>
+            
+        </div>
+    </section>
+    
 {% endblock %}

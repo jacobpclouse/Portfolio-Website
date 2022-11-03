@@ -25,7 +25,7 @@ app = Flask(__name__)
     # Index page
 @app.route('/')
 def myIndexPage():
-    title = "Jacob Clouse Portfolio Website"
+    title = "Jacob Clouse Portfolio Website - Index"
     return render_template('index.html',html_title = title)
 
 
