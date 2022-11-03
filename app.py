@@ -25,9 +25,14 @@ app = Flask(__name__)
     # Index page
 @app.route('/')
 def myIndexPage():
-    title = "Jacob Clouse Portfolio Website - Index"
+    title = "Index - Jacob Clouse Portfolio Website"
     return render_template('index.html',html_title = title)
 
+
+@app.route('/project/<int:projNum>')
+def myProjectPage(projNum):
+    title = f"Project {projNum} - Jacob Clouse Portfolio Website"
+    return render_template('portfolioItemTemplate.html',html_title = title)
 
 # main statement - used to set dev mode
 if __name__ == '__main__':

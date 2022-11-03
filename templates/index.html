@@ -1,27 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <!-- Title of webpage set here -->
-    <!-- <h1>{% block title %} {{html_title}} {% endblock %}</h1> -->
 
-    <!-- Header and Hamburger button setup -->
-    <header class="realHeader">
-        <div class="logo">
-            <img src="{{ url_for('static', filename='/img/logo2.png') }}" alt="JPC Logo">
-           
-        </div>
-        <button class="nav-toggle" aria-label="toggle navigation">
-            <span class="hamburger"></span>
-        </button>
-        <nav class="nav">
-            <ul class="nav__list">
-                <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
-                <li class="nav__item"><a href="#services" class="nav__link">My Skills</a></li>
-                <li class="nav__item"><a href="#about" class="nav__link">About Me</a></li>
-                <li class="nav__item"><a href="#work" class="nav__link">My Work</a></li>
-            </ul>
-        </nav>
-    </header>
 
     <!-- Introduction -->
     <section class="intro" id="home">
